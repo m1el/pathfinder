@@ -20,7 +20,7 @@ mod swizzle_f32x4;
 mod swizzle_i32x4;
 
 #[repr(simd)]
-struct Simd<T, const N: usize>([T; N]);
+pub(crate) struct Simd<T, const N: usize>([T; N]);
 
 macro_rules! simd_shuffle2 {
     ($x:expr, $y:expr, <$(const $imm:ident : $ty:ty),+> $idx:expr $(,)?) => {{
